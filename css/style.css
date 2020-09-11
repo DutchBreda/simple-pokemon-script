@@ -1,0 +1,150 @@
+:root {
+  --primary-color: #404040;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--primary-color);
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.page-header {
+  display: flex;
+  width: 100%;
+  height: 14vh;
+  padding: 20px;
+  border-bottom: lightgray 1px solid;
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: -53px;
+  left: 12px;
+  height: 50px;
+}
+
+#chris-farrell-logo {
+  height: 200px;
+}
+
+.pokemon-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.pokemon-list li {
+  margin: 8px;
+}
+
+.my-class {
+  /* background-image: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%); */
+  background-image: linear-gradient(315deg, #ffac81 0%, #ff928b 74%);
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 5px 3px grey;
+  width: 200px;
+  height: 200px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.my-class:hover {
+  background-color: #627aad;
+}
+
+#modal-container {
+  display: none;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  /* background: #fff; */
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  padding: 15px;
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  border-radius: 10px;
+}
+
+.modal h1 {
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.25rem;
+  /* margin-top: 10px; */
+}
+
+.modal p {
+  text-align: center;
+  margin-bottom: 0;
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+}
+
+#modal-container.is-visible {
+  display: block;
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* to show it above other content */
+  z-index: 999;
+  /*to allow scrolling if the screen is not high enough*/
+  overflow: auto;
+  /* this is used to center the modal */
+  text-align: center;
+}
+
+.modal-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
+}
+
+.modal-close {
+  letter-spacing: 1px;
+  background-color: #3b5998;
+  /* border-radius: 6px; */
+  border-radius: 0.35em;
+  display: block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  padding: 6px 6px;
+  text-decoration: none;
+  float: right;
+}
+
+.modal-close:hover {
+  background-color: #627aad;
+}

@@ -1,0 +1,234 @@
+html{
+	background-color: #eaf0f2;
+	color:inherit;
+}
+
+body{
+	font:14px/1.5 Arial, Helvetica, sans-serif;
+	padding:0;
+	margin:0;
+	text-align: center;
+}
+
+h1{
+	color: #3F71AE;
+	background-color: inherit;
+	text-align: center;
+	text-decoration: none;
+	margin-top:0;
+	padding-bottom: 16px;
+	font: normal 32px/1.5 'Open Sans', sans-serif;
+}
+
+.menu{
+	text-align: center;
+	padding-top: 25px;
+	margin-bottom:200px;
+}
+
+.menu img{
+	opacity: 0.4;
+	margin: 20px auto;
+}
+
+.menu h1{
+	margin-top:0;
+	font: normal 32px/1.5 'Open Sans', sans-serif;
+	color: #3F71AE;
+	background-color: inherit;
+	padding-bottom: 16px;
+}
+
+.menu h2{
+	color: #F05283;
+	background-color: inherit;
+}
+
+.menu h2 a{
+	color:inherit;
+	background-color: inherit;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid #F05283;
+	padding: 10px 15px;
+	border-radius: 3px;
+	font: bold 14px/1 'Open Sans', sans-serif;
+	text-transform: uppercase;
+}
+
+.menu h2 a:hover{
+	background-color:#F05283;
+	transition:0.2s;
+	color:#f1f1f1;
+}
+
+.menu ul {
+	max-width: 600px;
+	margin: 60px auto 0;
+}
+
+.menu ul a{
+	text-decoration: none;
+	color: #FFF;
+	text-align: left;
+	background-color: #B9C1CA;
+	padding: 10px 16px;
+	border-radius: 2px;
+	opacity: 0.8;
+	font-size: 16px;
+	display: inline-block;
+	margin: 4px;
+	line-height: 1;
+	outline: none;
+
+	transition: 0.2s ease;
+}
+
+.menu ul li a.active{
+	color: inherit;
+	background-color: #66B650;
+}
+
+.menu ul li a:hover {
+	opacity: 1;
+}
+
+.menu ul{
+	list-style: none;
+	padding: 0;
+}
+
+.menu ul li{
+	display: inline-block;
+}
+
+/* Center Pokédex logo*/
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+  width: 20%;
+}
+
+/* Register form styling */
+.input-wrapper {
+  margin-bottom: 10px;
+	margin-top: 25px;
+	position: relative;
+  left: 1em;
+  top: 1em;
+
+}
+
+label {
+  display: inline-block;
+  min-width: 75px;
+}
+
+.error-message {
+  color: red;
+	background-color: inherit;
+  font-size: 1em;
+}
+
+/* Button style */
+.button-class {
+	color:inherit;
+  background-color: #B9C1CA;
+  border: none;
+  padding: 16px 32px;
+  font-size: 24px;
+  margin: 2px 1px;
+  transition-duration: 0.8s;
+  cursor: pointer;
+	float: left; /* Float the buttons side by side */
+}
+
+/* Remove dots in front of buttons */
+ul {
+    list-style-type: none;
+}
+
+/* -- Header -- */
+.header-basic-light{
+	padding: 20px 40px;
+	box-sizing:border-box;
+	box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.15);
+	height: 80px;
+	color:inherit;
+	background-color: #fff;
+}
+
+.header-basic-light .header-limiter {
+	max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* centering text */
+p {
+  text-align: center;
+}
+
+/* Logo txt */
+.header-basic-light .header-limiter h1{
+	float: left;
+	font: normal 36px Cookie, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin: 0;
+}
+
+.header-basic-light .header-limiter h1 span {
+	color: #5383d3;
+	background-color: inherit;
+}
+
+/* The header links */
+.header-basic-light .header-limiter a {
+	background-color: inherit;
+	color: #5c616a;
+	text-decoration: none;
+}
+
+.header-basic-light .header-limiter nav{
+	font:15px Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	float: right;
+}
+
+.header-basic-light .header-limiter nav a{
+	display: inline-block;
+	padding: 0 5px;
+	opacity: 0.9;
+	text-decoration:none;
+	background-color: inherit;
+	color: #5c616a;
+	line-height:1;
+}
+
+.header-basic-light .header-limiter nav a.selected {
+	background-color: #86a3d5;
+	color: #ffffff;
+	border-radius: 3px;
+	padding:6px 10px;
+}
+
+/* Making the header responsive. */
+@media all and (max-width: 600px) {
+
+.header-basic-light .header-limiter nav a {
+	font-size: 13px;
+}}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* responsive images */
+.responsive {
+  width: 100%;
+  height: auto;
+}
