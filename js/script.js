@@ -63,7 +63,7 @@ function loadDetails(item) {
   }).then(function (details) {
 
 // To add the details to each item:
-  item.imageUrl = details.sprites.front_default;
+  item.imgUrl = details.sprites.front_default;
   item.height = details.height;
   item.types = Object.keys(details.types);
 }).catch(function (error) {
@@ -75,7 +75,7 @@ function loadDetails(item) {
   return repository;
   }
 
-// Function to show details of each pokemon in alert window:
+// Function to show details of each pokemon in pokemonrepository window:
 //  function showDetails(item) {
 //    pokemonRepository.loadDetails(item).then(function () {
 //    console.log(item);
@@ -84,14 +84,19 @@ function loadDetails(item) {
 //  }
 
 // Show modal content
-  function showDetails(item) {
-    var $modalContainer = $('#modal-container');
-    //clear existing content of the model
+var pokemonRepository = (function() {}
+  var $modalContainer = document.querySelector('#modal-container');
+  function showModal(title, text) {
+  modalContainer.innerHTML = '';
+  let modal = document.createElement('div');
+  modal.classList.add('modal');
+
+    //clear content of the model
     $modalContainer.empty();
-    //creating div element in DOM
-    //adding class to div DOM element
+
+    //adding a class to div DOM element
     var modal = $('<div class="modal"></div>');
-    //creating closing button in modal content
+    //creating close button in modal content
     var closeButtonElement = $('<button class="modal-close">Close</button>');
     // Closing modal after click
     closeButtonElement.on('click', hideModal);
@@ -99,7 +104,7 @@ function loadDetails(item) {
     var nameElement = $('<h1>' + item.name + '</h1>');
     // creating img in modal content
     var imageElement = $('<img class="modal-img">');
-    imageElement.attr('src', item.imageUrl);
+    imageElement.attr('src', item.imgUrl);
     //creating element for height in modal content
     var heightElement = $('<p>' + 'height : ' + item.height + 'm' + '</p>');
     //creating element for weight in modal content
