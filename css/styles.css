@@ -233,8 +233,12 @@ p {
   height: auto;
 }
 
+#modal-container {
+	display: none;
+}
+
 /* Modal Styling */
-modal-container {
+#modal-container.is-visible {
   position: fixed;
   padding: 15px;
   box-sizing: border-box;
@@ -283,3 +287,40 @@ modal-container {
 .modal p {
   margin-bottom: 0;
 }
+
+.modal-img {
+/* needs editing styling */
+}
+
+/* Button Styling */
+.button {
+  background-color: #92ACD9;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+	margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+	border-radius: 15px;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {background-color: #5C616A}
+
+.button:active {
+	color: inherit;
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #fff;
+   color: black;
+   text-align: center;

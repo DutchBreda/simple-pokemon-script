@@ -2,13 +2,14 @@
 var pokemonRepository = (function () {
 var repository = [];
 var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=175';
+var modalContainer = document.querySelector('#modal-container');
 
 // Adding the pokemons
 function add(pokemon) {
 repository.push(pokemon);
 }
 
-// retrieving the data the data
+// retrieving the data
 function getAll() {
   return repository;
 }
@@ -35,7 +36,7 @@ function addListItem(pokemon) {
 })
 }
 
-// Function to load pokemon list from apiUrl:
+// Function to load pokemon list from apiUrl above
 function loadList() {
   return fetch(apiUrl).then(function (response) {
     // JSON: the most common data format used when exchanging data with external sources.
@@ -75,79 +76,62 @@ function loadDetails(item) {
   return repository;
   }
 
-// Function to show details of each pokemon in pokemonrepository window:
-//  function showDetails(item) {
-//    pokemonRepository.loadDetails(item).then(function () {
-//    console.log(item);
-//    alert('Height:' + ' ' + item.height + ' ' + 'Type: ' + ' ' + item.types);
-//    });
-//  }
-
-// Show modal content
-var pokemonRepository = (function() {}
-  var $modalContainer = document.querySelector('#modal-container');
-  function showModal(title, text) {
-  modalContainer.innerHTML = '';
-  let modal = document.createElement('div');
-  modal.classList.add('modal');
-
-    //clear content of the model
-    $modalContainer.empty();
-
-    //adding a class to div DOM element
-    var modal = $('<div class="modal"></div>');
-    //creating close button in modal content
-    var closeButtonElement = $('<button class="modal-close">Close</button>');
-    // Closing modal after click
-    closeButtonElement.on('click', hideModal);
-    //creating element for name in modal content
-    var nameElement = $('<h1>' + item.name + '</h1>');
-    // creating img in modal content
-    var imageElement = $('<img class="modal-img">');
-    imageElement.attr('src', item.imgUrl);
-    //creating element for height in modal content
-    var heightElement = $('<p>' + 'height : ' + item.height + 'm' + '</p>');
-    //creating element for weight in modal content
-    var weightElement = $('<p>' + 'weight : ' + item.weight + 'kg' + '</p>');
-    //creating element for type in modal content
-    var typesElement = $('<p>' + 'types : ' + item.types + '</p>');
-    //creating element for abilities in modal content
-    var abilitiesElement = $('<p>' + 'abilities : ' + item.abilities + '</p>');
-    // Append modal content to webpage
-    modal.append(closeButtonElement);
-    modal.append(nameElement);
-    modal.append(imageElement);
-    modal.append(heightElement);
-    modal.append(weightElement);
-    modal.append(typesElement);
-    modal.append(abilitiesElement);
-    $modalContainer.append(modal);
-    // Add class to show modal
-    $modalContainer.addClass('is-visible');
+// function to show the details of each Pokemon in pokemon repository window - thanks Jackson!
+  function showDetails(pokemon) {
+    loadDetails(pokemon).then (function () {
+      showModal(pokemon);
+    });
   }
 
-  // Hides modal on click
-  function hideModal() {
-    var $modalContainer = $('#modal-container');
-    $modalContainer.removeClass('is-visible');
+  function showModal(pokemon) {
+    var modalContainer = document.querySelector('#modal-container');
   }
+// Clear all the existing modal content
+modalContainer.innerHTML= '';
 
-  // Hides model with ESC
-  jQuery(window).on('keydown', e => {
-    var $modalContainer = $('#modal-container');
-    if (e.key === 'Escape' && $modalContainer.hasClass('is-visible')) {
-      hideModal();
-    }
-  });
+var modal = document.createElement('div');
+modal.classList.add('modal');
 
-  // Hides modal if clicked outside Modal
-  var $modalContainer = document.querySelector('#modal-container');
-  $modalContainer.addEventListener('click', e => {
-    var target = e.target;
-    if (target === $modalContainer) {
-      hideModal();
-    }
-  });
+// Add new modal textContent
+var closeButtonElement = document.createElement('button');
+closeButtonElement.classList.add('modal-close');
+closeButtonElement.innerText= 'Close';
+
+var titleElement = document.createElement('h1');
+titleElement.innerText = pokemon.name;
+
+var contentElement = document.createElement('p');
+contentElement.innerText = pokemon.imgUrl;
+
+modal.appendChild(closeButtonElement);
+modal.appendChild(titleElement);
+modal.appendChild(contentElement);
+modalContainer.appendchild(modal);
+
+modalContainer.classList.add('is-visible');
+}
+
+
+
+// Hiding the modal
+function hideModal() {
+  modalContainer.classList.remove('is-visible');
+}
+
+// Clicking ESC to close the modal, need to remember this!
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+    hideModal();
+  }
+});
+
+// Clicking outside the container to close modal
+modalContainer.addEventListener('click'), (e) => {
+  let target = e.target;
+  if (target === modalContainer) {
+    hideModal();
+  }
+});
 
   return {
     add: add,
@@ -156,9 +140,16 @@ var pokemonRepository = (function() {}
     loadList: loadList,
     loadDetails: loadDetails,
     showModal: showModal,
-    hideModal: hideModal
+    hideModal: hideModal,
   };
 })();
+
+// To create a list of pokemon's name on the button!! Makes sense, thx!
+pokemonRepository.loadList().then(function() {
+pokemonRepository.getAll().forEach(function(pokemon) {
+pokemonRepository.addListItem(pokemon);
+});
+});
 
 // To return the values wich can be accessed to outside the IIFE:
   return {
