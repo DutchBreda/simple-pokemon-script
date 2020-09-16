@@ -307,7 +307,10 @@ p {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.button:hover {background-color: #5C616A}
+.button:hover {
+	color:#fff;
+	background-color: #5C616A
+}
 
 .button:active {
 	color: inherit;
@@ -324,3 +327,9 @@ p {
    background-color: #fff;
    color: black;
    text-align: center;
+}
+
+canvas {
+  border: solid #000 1px;
+  touch-action: none;
+}

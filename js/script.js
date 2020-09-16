@@ -1,7 +1,7 @@
 // Wrapped array in an IIFE and assigned as an empty array
 var pokemonRepository = (function () {
 var repository = [];
-var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=175';
+var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 var modalContainer = document.querySelector('#modal-container');
 
 // Adding the pokemons
@@ -87,7 +87,7 @@ function loadDetails(item) {
     var modalContainer = document.querySelector('#modal-container');
   }
 // Clear all the existing modal content
-modalContainer.innerHTML= '';
+modalContainer.innerHTML = '';
 
 var modal = document.createElement('div');
 modal.classList.add('modal');
@@ -95,7 +95,7 @@ modal.classList.add('modal');
 // Add new modal textContent
 var closeButtonElement = document.createElement('button');
 closeButtonElement.classList.add('modal-close');
-closeButtonElement.innerText= 'Close';
+closeButtonElement.innerText = 'Close';
 
 var titleElement = document.createElement('h1');
 titleElement.innerText = pokemon.name;
@@ -106,19 +106,17 @@ contentElement.innerText = pokemon.imgUrl;
 modal.appendChild(closeButtonElement);
 modal.appendChild(titleElement);
 modal.appendChild(contentElement);
-modalContainer.appendchild(modal);
+modalContainer.appendChild(modal);
 
 modalContainer.classList.add('is-visible');
 }
-
-
 
 // Hiding the modal
 function hideModal() {
   modalContainer.classList.remove('is-visible');
 }
 
-// Clicking ESC to close the modal, need to remember this!
+// Clicking ESC to close the modal need to remember this!
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
     hideModal();
@@ -144,7 +142,7 @@ modalContainer.addEventListener('click'), (e) => {
   };
 })();
 
-// To create a list of pokemon's name on the button!! Makes sense, thx!
+// To create a list of pokemon's name on the button!
 pokemonRepository.loadList().then(function() {
 pokemonRepository.getAll().forEach(function(pokemon) {
 pokemonRepository.addListItem(pokemon);
@@ -161,10 +159,3 @@ pokemonRepository.addListItem(pokemon);
     showDetails: showDetails
   };
 })();
-
-// To create list of pokemon with pokemon's name on the button:
-pokemonRepository.loadList().then(function() {
-pokemonRepository.getAll().forEach(function(pokemon){
-pokemonRepository.addListItem(pokemon);
-});
-});
