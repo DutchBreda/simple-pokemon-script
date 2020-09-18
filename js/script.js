@@ -97,9 +97,11 @@ var pokemonRepository = (function() {
         var closeButtonElement = document.createElement('button');
         closeButtonElement.classList.add('modal-close');
         closeButtonElement.innerText = 'Close';
+        closeButtonElement.addEventListener('click', hideModal);
 
-        var titleElement = document.createElement('h1');
-        titleElement.innerText = pokemon.name;
+        // creates image in modal
+        var imageElement = $('<img class="modal-img">');
+        imageElement.attr('src', item.imageUrl);
 
         var contentElement = document.createElement('p');
         contentElement.innerText = pokemon.imgUrl;
@@ -108,7 +110,6 @@ var pokemonRepository = (function() {
         modal.appendChild(titleElement);
         modal.appendChild(contentElement);
         modalContainer.appendChild(modal);
-
         modalContainer.classList.add('is-visible');
     }
 
@@ -142,3 +143,10 @@ var pokemonRepository = (function() {
         hideModal: hideModal,
     };
 })();
+
+// To create a list of pokemon name on buttons
+pokemonRepository.loadList().then(function() {
+  pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
+  });
+});

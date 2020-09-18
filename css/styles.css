@@ -249,6 +249,14 @@ p {
 	color: inherit;
   background: white;
 
+	.modal-img {
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto;
+	  width: 50%;
+	  height: auto;
+	}
+
   /* Show on top of other content */
   z-index: 999;
 
