@@ -99,15 +99,21 @@ var pokemonRepository = (function() {
         closeButtonElement.innerText = 'Close';
         closeButtonElement.addEventListener('click', hideModal);
 
+        var titleElement = document.createElement('p');
+        titleElement.innerText = pokemon.name;
+
         // creates image in modal
-        var imageElement = $('<img class="modal-img">');
-        imageElement.attr('src', item.imageUrl);
+        // var imageElement = $('<img class="modal-img">');
+        // imageElement.attr('src', item.imageUrl);
+        let imageElement = document.createElement('img');
+        imageElement.src = pokemon.imgUrl;
 
         var contentElement = document.createElement('p');
-        contentElement.innerText = pokemon.imgUrl;
+        contentElement.innerText = pokemon.height;
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
+        modal.appendChild(imageElement);
         modal.appendChild(contentElement);
         modalContainer.appendChild(modal);
         modalContainer.classList.add('is-visible');

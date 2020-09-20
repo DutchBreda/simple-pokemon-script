@@ -240,14 +240,14 @@ p {
 /* Modal Styling */
 #modal-container.is-visible {
   position: fixed;
-  padding: 15px;
+  padding: 20px;
   box-sizing: border-box;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 	color: inherit;
-  background: white;
+  background: grey;
 
 	.modal-img {
 	  display: block;
@@ -283,7 +283,7 @@ p {
 .modal-close {
   float: right;
   border: 0;
-  background: white;
+  background: grey;
   color: #FFA500;
   text-decoration: none;
 }
