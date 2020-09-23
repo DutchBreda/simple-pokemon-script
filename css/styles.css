@@ -134,15 +134,15 @@ label {
 
 /* Button style */
 .button-class {
-	color:inherit;
-  background-color: #B9C1CA;
-  border: none;
-  padding: 16px 32px;
-  font-size: 24px;
-  margin: 2px 1px;
-  transition-duration: 0.8s;
-  cursor: pointer;
-	float: left; /* Float the buttons side by side */
+ color:inherit;
+	background-color: #EAF0F2;
+	border: none;
+	padding: 10px 16px;
+	font-size: 24px;
+	margin: 2px 1px;
+	transition-duration: 0.8s;
+	cursor: pointer;
+ 	float: left; /* Float the buttons side by side */
 }
 
 /* Remove dots in front of buttons */
@@ -276,8 +276,8 @@ p {
 .modal-close {
   float: right;
   border: 0;
-  background: #B9C1CA;
-  color: white;
+  background: #36329A;
+  color: #FFCE31;
   text-decoration: none;
 }
 
@@ -290,10 +290,10 @@ p {
 }
 
 /* Button Styling */
-.button {
-  background-color: #92ACD9;
+button {
+  background-color: #36329A;
   border: none;
-  color: white;
+  color: #FFCE31;
   padding: 15px 32px;
 	margin-bottom: 10px;
   text-align: center;
@@ -304,12 +304,12 @@ p {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.button:hover {
-	color:#fff;
-	background-color: #5C616A
+button:hover {
+	color: #FFCE31;
+	background-color: #36329A;
 }
 
-.button:active {
+button:active {
 	color: inherit;
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
