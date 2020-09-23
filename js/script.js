@@ -100,7 +100,7 @@ var pokemonRepository = (function() {
         closeButtonElement.addEventListener('click', hideModal);
 
         var titleElement = document.createElement('p');
-        titleElement.innerText = pokemon.name;
+        titleElement.innerText = pokemon.name.toUpperCase();;
 
         // creates image in modal
         // var imageElement = $('<img class="modal-img">');
@@ -109,7 +109,7 @@ var pokemonRepository = (function() {
         imageElement.src = pokemon.imgUrl;
 
         var contentElement = document.createElement('p');
-        contentElement.innerText = pokemon.height;
+        contentElement.innerText = pokemon.height + ' decimeters';
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);

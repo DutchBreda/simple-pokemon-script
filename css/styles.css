@@ -53,7 +53,6 @@ h1{
 	padding: 10px 15px;
 	border-radius: 3px;
 	font: bold 14px/1 'Open Sans', sans-serif;
-	text-transform: uppercase;
 }
 
 .menu h2 a:hover{
@@ -234,7 +233,7 @@ p {
 }
 
 #modal-container {
-	display: none;
+	display: contents;
 }
 
 /* Modal Styling */
@@ -249,13 +248,7 @@ p {
 	color: inherit;
   background: grey;
 
-	.modal-img {
-	  display: block;
-	  margin-left: auto;
-	  margin-right: auto;
-	  width: 50%;
-	  height: auto;
-	}
+
 
   /* Show on top of other content */
   z-index: 999;
@@ -283,8 +276,8 @@ p {
 .modal-close {
   float: right;
   border: 0;
-  background: grey;
-  color: #FFA500;
+  background: #B9C1CA;
+  color: white;
   text-decoration: none;
 }
 
@@ -294,10 +287,6 @@ p {
 
 .modal p {
   margin-bottom: 0;
-}
-
-.modal-img {
-/* needs editing styling */
 }
 
 /* Button Styling */
